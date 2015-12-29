@@ -46,13 +46,11 @@ topSEA <- trainSEA[trainSEA$Category %in% countsSEA$Category[c(1:8,10:21)],]
 
 pSF <- ggmap(mapSF) +
      geom_point(data=topSF, aes(x=X, y=Y, color=factor(Category)), alpha=0.05) +
-     guides(colour = guide_legend(override.aes = list(alpha=1.0, size=3.0)))
-     # + scale_colour_brewer(type="qual",palette="Paired")
-ggsave("mapSF.png", p, width=14, height=10, units="in")
+     guides(colour = guide_legend(override.aes = list(alpha=1.0)))
+# ggsave("mapSF.png", p, width=14, height=10, units="in")
 pSEA <- ggmap(mapSEA) +
      geom_point(data=topSEA, aes(x=Longitude, y=Latitude, color=factor(Category)), alpha=0.05) +
-     guides(colour = guide_legend(override.aes = list(alpha=1.0, size=3.0)))
-     # + scale_colour_brewer(type="qual",palette="Paired")
-ggsave("mapSEA.png", p, width=14, height=10, units="in")
+     guides(colour = guide_legend(override.aes = list(alpha=1.0)))
+# ggsave("mapSEA.png", p, width=14, height=10, units="in")
 pSF
 pSEA
